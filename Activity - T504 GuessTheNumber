@@ -20,11 +20,9 @@ public class GuessTheNumber extends Application {
 
     @Override
     public void start(Stage stage) {
-        // Generate a random number between 1 and 100
         Random random = new Random();
         randomNumber = random.nextInt(100) + 1;
 
-        // create and configure text fields for user entry
         Text instruction = new Text("Guess the number between 1 and 100:");
         instruction.setFill(Color.BLACK);
         instruction.setFont(Font.font("Times New Roman", 25));
@@ -34,12 +32,10 @@ public class GuessTheNumber extends Application {
         guessField.setMaxWidth(250);
         guessField.setStyle("-fx-text-fill: blue;");
 
-        // create and configure a label to display the output
         Label resultLabel = new Label();
         resultLabel.setTextFill(Color.RED);
         resultLabel.setFont(Font.font("Arial", 20));
 
-        // create and configure a button
         Button guessButton = new Button("ENTER GUESS");
         guessButton.setFont(Font.font("Times New Roman", 20));
         guessButton.setOnAction(e -> {
@@ -59,19 +55,15 @@ public class GuessTheNumber extends Application {
             }
         });
 
-        // create and configure a VBox to hold our components
         VBox root = new VBox();
         root.setSpacing(10);
         root.setBackground(Background.EMPTY);
         root.setAlignment(Pos.CENTER);
 
-        // add the components to the VBox
         root.getChildren().addAll(instruction, guessField, guessButton, resultLabel);
 
-        // create a new scene
         Scene scene = new Scene(root, 600, 400, Color.YELLOW);
 
-        // add the scene to the stage, then configure the stage and make it visible
         stage.setScene(scene);
         stage.setTitle("Number Guessing Game DELA ROSA");
         stage.show();
